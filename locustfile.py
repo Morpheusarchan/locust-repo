@@ -12,14 +12,15 @@ class JFTest(SequentialTaskSet):
 
     USERNAME = os.getenv("USERNAME")
     PASSWORD = os.getenv("PASSWORD")
-    image = "alpine:3.9"
-    tag = "new-image"
-    version = "latest"
-    platform_url = HOSTNAME
     HEADERS = {
         "Content-Type": "application/json",
         "Authorization": os.getenv("TOKEN")
     }
+    platform_url = HOSTNAME
+
+    image = "alpine:3.9"
+    tag = "new-image"
+    version = "latest"
 
     @task
     def create_repo(self):
@@ -240,8 +241,8 @@ class JFTest(SequentialTaskSet):
 
     @task
     def create_and_apply_policy_and_watch(self):
-        policy_name = "sec_policy_" + str(random.randint(0, 10000))
-        watch_name = "watch" + str(random.randint(0, 10000))
+        policy_name = "sec_policy_" + str(random.randint(10000, 99999))
+        watch_name = "watch" + str(random.randint(10000, 99999))
 
         self.create_policy(policy_name)
         self.create_watch(policy_name, watch_name)
