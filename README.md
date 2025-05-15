@@ -69,7 +69,7 @@ for i in {1..3}; do
   (nohup locust -f locustfile.py --worker --master-host=(masterhost IP) > /dev/null 2>&1 < /dev/null &)
 done
 
-Adjust the number (1..3) based on how many worker processes you want to run.
+Adjust the number (1..3) based on how many worker processes you want to run. Max number of workers will be 1 less than the number of cores that your VM has (1 will be for master).
 
 **✅ 4. Start & Monitor the Test (From UI)**
 
