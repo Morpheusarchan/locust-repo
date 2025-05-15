@@ -79,8 +79,24 @@ http://(masterhost IP):8089/
 
 Provide the number of users, rampup and runtime(optional) & start the test
 
+---
 
 ## 🧼 Cleanup
 To stop all running Locust processes:
 
 ps aux | grep locust | grep -v grep | awk '{print $2}' | xargs kill -9
+
+---
+
+## 📊 Sample Test Run Output
+
+### 📈 Locust Charts (RPS, Response Time, Users)
+
+![Locust Charts](images/locust-charts.png)
+
+---
+
+### 📋 Locust Statistics Table
+
+![Locust Statistics](images/locust-stats.png)
+
